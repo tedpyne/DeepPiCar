@@ -71,7 +71,7 @@ def create_tf_example(group, path, label_map):
         xmaxs.append(row["xmax"] / width)
         ymins.append(row["ymin"] / height)
         ymaxs.append(row["ymax"] / height)
-        classes_text.append(row["class"].encode("utf8"))
+        classes_text.append(row["class"])
         class_index = label_map.get(row["class"])
         assert (
             class_index is not None
