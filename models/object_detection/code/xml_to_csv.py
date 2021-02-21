@@ -55,6 +55,7 @@ def xml_to_csv(path):
         "ymax",
     ]
     xml_df = pd.DataFrame(xml_list, columns=column_name)
+    xml_df['class'] = xml_df['class'].apply(str)
     classes_names = list(set(classes_names))
     classes_names.sort()
     return xml_df, classes_names
